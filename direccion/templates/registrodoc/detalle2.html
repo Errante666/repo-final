@@ -1,0 +1,62 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="container">
+    <div class="row">
+        <h1>Detalle del NoDocente</h1>
+    </div>
+    <div class="row">
+        <div class="card" style="width:400px">
+
+
+            {% if detalle_nodocente.avatar %}
+            <img class="card-img-top" src="{{ detalle2_nodocente.avatar.url }}" alt="Card image">
+            <!--Calcula la url de la imagen-->
+            {% else %}
+            <img class="card-img-top" src="{% static 'img/avatar.jpeg' %}" alt="Card image"> {% endif %}
+
+
+            <div class="card-body">
+                <h4 class="card-title">{{ detalles.last_name }}, {{ detalles.first_name }}</h4>
+                <p class="card-text">
+                    <ul>
+                        <li>{{ detalles.age }}</li>
+                        <li>{{ detalles.administarcaion }}</li>
+                    </ul>
+                </p>
+                <a href="{% url 'registro_app:modificar-' detalle2.id %}" class="btn btn-primary">Ver Perfil</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>Detalle del nodocente:</h1>
+
+<ul>
+    <li>{{detalle.last_name}}</li>
+    <li>{{detalle.first_name}}</li>
+
+    <li>{{detalle.age}}</li>
+
+</ul>
